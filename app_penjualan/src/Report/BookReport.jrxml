@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="94bc6e89-cb2b-46fe-9585-878a642b35c6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="52"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM db_penjualan.books;]]>
+	</queryString>
+	<field name="isbn" class="java.lang.Integer"/>
+	<field name="title" class="java.lang.String"/>
+	<field name="stock" class="java.lang.Integer"/>
+	<field name="price" class="java.lang.Integer"/>
+	<field name="author" class="java.lang.String"/>
+	<field name="book_type_id" class="java.lang.Integer"/>
+	<group name="isbn">
+		<groupExpression><![CDATA[$F{isbn}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="23" y="0" width="760" height="56" forecolor="#FFFFFF" backcolor="#003399" uuid="fdba6df1-ccf5-4094-9a0d-70ed099f5aa9"/>
+				<textElement>
+					<font size="36" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Book List]]></text>
+			</staticText>
+			<line>
+				<reportElement x="23" y="67" width="760" height="1" uuid="5bebfa24-c09c-4344-8198-38cdfe20e83d"/>
+			</line>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="23" y="0" width="75" height="35" forecolor="#003366" backcolor="#CCCCCC" uuid="4c8066d7-4ee0-40ff-8676-5048ebe1b80f"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[ISBN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="98" y="0" width="184" height="35" forecolor="#003366" backcolor="#CCCCCC" uuid="d4f4b3b0-3d5d-4331-a0f0-5ff96d8d18f7"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[TITLE	]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="282" y="0" width="100" height="35" forecolor="#003366" backcolor="#CCCCCC" uuid="44c55707-e47c-4b88-a030-5c2fb1738d81"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[STOCK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="382" y="0" width="100" height="35" forecolor="#003366" backcolor="#CCCCCC" uuid="0224280d-3d05-4809-9505-6fc5815921c9"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[PRICE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="482" y="0" width="187" height="35" forecolor="#003366" backcolor="#CCCCCC" uuid="c2750c33-fb1f-42da-8afd-943f98be4648"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[AUTHOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="669" y="0" width="114" height="35" forecolor="#003366" backcolor="#CCCCCC" uuid="be75acea-8af3-4825-9f7c-23208fb05a1e"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[BOOK TYPE]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="23" y="2" width="75" height="20" uuid="5ef00f64-f3c2-4bc0-9647-1f28f16a5099"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{isbn}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="98" y="2" width="184" height="20" uuid="4736c482-86ba-4e79-8cfe-38202ce8b7d1"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{title}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="282" y="2" width="100" height="20" uuid="da7813f0-a051-408c-b2fd-4468ec9e15fd"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{stock}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="382" y="2" width="100" height="20" uuid="b640fbfd-e916-434e-b6b0-847037d2564b"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="482" y="2" width="187" height="20" uuid="f3419a66-102e-4619-b9d6-e179582354df"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{author}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="669" y="2" width="114" height="20" uuid="04f5eb23-0876-4cf5-b7a3-d182a3acfe9a"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{book_type_id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement mode="Opaque" x="23" y="19" width="760" height="35" backcolor="#CCCCCC" uuid="421bb720-4e29-41df-85a3-2d618294469b"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
